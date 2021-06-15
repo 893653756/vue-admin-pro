@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <el-button type="success">dasda</el-button>
     <router-view />
   </div>
 </template>
