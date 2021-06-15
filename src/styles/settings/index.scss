@@ -1,0 +1,23 @@
+/* 定义颜色变量 */
+$base-color-primary: #1890ff;
+$base-color-success: #13ce66;
+$base-color-warning: #ff6700;
+$base-color-danger: #ff4d4f;
+$base-color-info: rgba(0, 0, 0, 0.65);
+$base-color-white: #ffffff;
+$base-color-background: #f6f8f9;
+
+
+
+
+
+
+
+$--color-primary: $base-color-primary !default;
+$--color-success: $base-color-success !default;
+$--color-warning: $base-color-warning !default;
+$--color-danger: $base-color-danger !default;
+$--color-info: $base-color-info !default;
+
+$--font-path: "~element-ui/lib/theme-chalk/fonts";
+@import "~element-ui/packages/theme-chalk/src/index";
