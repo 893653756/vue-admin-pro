@@ -6,11 +6,20 @@ $base-color-danger: #ff4d4f;
 $base-color-info: rgba(0, 0, 0, 0.65);
 $base-color-white: #ffffff;
 $base-color-background: #f6f8f9;
+// 菜单背景色
+$base-menu-background: #282c34;
 
 
+/* 定义大小 */
+$base-nav-height: 60px;
+$base-tabs-height: 50px;
+$base-menu-width: 220px;
+$base-menu-item-height: 34px;
 
-
-
+/* 定义一些基本字体 */
+$base-font-weight: 600;
+$base-font-color: $base-color-info; // 自行修改
+$base-font-size: 14px;
 
 
 $--color-primary: $base-color-primary !default;

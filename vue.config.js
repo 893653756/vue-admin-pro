@@ -20,4 +20,14 @@ module.exports = {
       errors: true,
     },
   },
+  css: {
+    loaderOptions: {
+      scss: {
+        prependData: `
+        @import "~@/styles/settings/index.scss";
+        @import "~@/styles/tools/mixin.scss";
+        `,
+      },
+    },
+  },
 };

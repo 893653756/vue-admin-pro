@@ -1,13 +1,40 @@
 <template>
-  <div>我是logo</div>
+  <div class="logo">
+    <img :src="logo" alt="" />
+    <span fz20>{{ appName }}</span>
+  </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-name: 'FyLogo'
-}
+  name: "FyLogo",
+  computed: {
+    ...mapGetters({
+      logo: "settings/logo",
+      appName: "settings/appName",
+    }),
+  },
+};
 </script>
 
-<style>
+<style lang="scss" scoped>
+.logo {
+  background-color: $base-color-info;
+  width: $base-menu-width;
+  height: $base-nav-height;
+  color: $base-color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  img {
+    width: 50px;
+  }
+  span {
+    font-weight: 600;
+    margin-left: 12px;
+  }
+}
 </style>

@@ -2,12 +2,11 @@
 <template>
   <div class="layout">
     <div class="layout-side">
-      <fy-logo />
       <fy-side-bar />
     </div>
     <div class="layout-body">
       <fy-header />
-      <fy-nav />
+      <fy-tabs />
       <fy-main />
     </div>
   </div>
@@ -24,15 +23,16 @@ export default {
   height: 100%;
   display: flex;
   &-side {
-    width: 250px;
-    background-color: yellow;
+    display: flex;
+    & > div {
+      flex: 1;
+    }
   }
   &-body {
     flex: 1;
     display: flex;
     flex-direction: column;
     width: 0px;
-    background-color: pink;
   }
 }
 </style>

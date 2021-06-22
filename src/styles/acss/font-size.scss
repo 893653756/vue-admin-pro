@@ -1,0 +1,6 @@
+// acss 类型, 以节点属性添加
+@for $i from 12 through 50 {
+  [fz#{$i}] {
+    font-size: #{$i}px;
+  }
+}

@@ -6,6 +6,7 @@ import path from "path";
 const metaKeys = [
   "title", // 菜单名
   "icon", // 菜单icon
+  "isColumn", // 是否通栏
   // 'isCustomSvg', // icon是否是自定义svg
   // 'noClosable', // 菜单是否不能关闭
   // 'ability', // 按钮权限
@@ -21,7 +22,8 @@ export function convertRouter(asyncRoutes) {
       if (route.type === "Layout") {
         route.component = () => import(`@/layouts/index.vue`);
       } else if (route.type === "Menu") {
-        route.component = (h) => h("router-view");
+        route.component = () =>
+          import(`@/layouts/components/FyKeepAlive/index.vue`);
       } else if (route.type === "Page") {
         const arr = route.filePath.split("views/");
         route.component = () => import(`@/views/${arr[1]}`);
@@ -67,4 +69,11 @@ export function filterRoutes(routes, baseUrl = "/") {
         return route;
       })
   );
+}
+
+/**
+ * 获取当前激活的路由路径
+ */
+export function handleActivePath(route) {
+  return route.matched[route.matched.length - 1].path
 }

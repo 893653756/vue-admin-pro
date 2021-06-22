@@ -1,13 +1,19 @@
 <template>
-  <div>我是侧边菜单</div>
+  <div class="side-bar">
+    <fy-logo />
+    <fy-menu />
+  </div>
 </template>
 
 <script>
 export default {
-name: 'FySideBar'
-}
+  name: "FySideBar",
+};
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.side-bar {
+  display: flex;
+  flex-direction: column;
+}
 </style>

@@ -1,5 +1,7 @@
 <template>
-  <div>我是header</div>
+  <div class="header">
+    <fy-nav />
+  </div>
 </template>
 
 <script>
@@ -8,6 +10,9 @@ name: 'FyHeader'
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.header {
+  display: flex;
+  height: 60px;
+}
 </style>

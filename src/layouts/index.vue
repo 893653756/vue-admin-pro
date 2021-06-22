@@ -1,13 +1,21 @@
 <template>
-  <component :is="layout"></component>
+  <component :is="`layout-${layoutType}`"></component>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Layouts",
   computed: {
-    layout() {
-      return "layout-comprehensive";
+    ...mapGetters({
+      layout: "settings/layout",
+    }),
+    layoutType() {
+      const { isColumn } = this.$route.matched[0]?.meta;
+      return isColumn && this.layout === "comprehensive"
+        ? "column"
+        : this.layout;
     },
   },
 };

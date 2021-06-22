@@ -1,12 +1,13 @@
 <template>
-  <router-view />
+  <div>02</div>
 </template>
 
 <script>
 export default {
-  name: "FyMain",
-};
+
+}
 </script>
 
 <style>
+
 </style>

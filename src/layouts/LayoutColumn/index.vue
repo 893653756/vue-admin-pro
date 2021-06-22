@@ -23,16 +23,13 @@ export default {
   display: flex;
   flex-direction: column;
   &-header {
-    height: 54px;
     display: flex;
     align-items: center;
-    background-color: yellow;
   }
   &-main {
     flex: 1;
     height: 0px;
     overflow-y: auto;
-    background-color: pink;
   }
 }
 </style>

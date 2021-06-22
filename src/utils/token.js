@@ -1,22 +1,22 @@
-import { storage, tokenName } from "@/config";
+import { STORAGE, TOKEN_NAME } from "@/constant";
 import cookie from "js-cookie";
 
 /**
  * 获取 token
  */
 export function getToken() {
-  if (storage) {
-    if ("localStorage" === storage) {
-      return localStorage.getItem(tokenName);
-    } else if ("sessionStorage" === storage) {
-      return sessionStorage.getItem(tokenName);
-    } else if ("cookie" === storage) {
-      return cookie.get(tokenName);
+  if (STORAGE) {
+    if ("localStorage" === STORAGE) {
+      return localStorage.getItem(TOKEN_NAME);
+    } else if ("sessionStorage" === STORAGE) {
+      return sessionStorage.getItem(TOKEN_NAME);
+    } else if ("cookie" === STORAGE) {
+      return cookie.get(TOKEN_NAME);
     } else {
-      return localStorage.getItem(tokenName);
+      return localStorage.getItem(TOKEN_NAME);
     }
   } else {
-    return localStorage.getItem(tokenName);
+    return localStorage.getItem(TOKEN_NAME);
   }
 }
 
@@ -24,18 +24,18 @@ export function getToken() {
  * 保存 token
  */
 export function setToken(token) {
-  if (storage) {
-    if ("localStorage" === storage) {
-      return localStorage.setItem(tokenName, token);
-    } else if ("sessionStorage" === storage) {
-      return sessionStorage.setItem(tokenName, token);
-    } else if ("cookie" === storage) {
-      return cookie.set(tokenName, token);
+  if (STORAGE) {
+    if ("localStorage" === STORAGE) {
+      return localStorage.setItem(TOKEN_NAME, token);
+    } else if ("sessionStorage" === STORAGE) {
+      return sessionStorage.setItem(TOKEN_NAME, token);
+    } else if ("cookie" === STORAGE) {
+      return cookie.set(TOKEN_NAME, token);
     } else {
-      return localStorage.setItem(tokenName, token);
+      return localStorage.setItem(TOKEN_NAME, token);
     }
   } else {
-    return localStorage.setItem(tokenName, token);
+    return localStorage.setItem(TOKEN_NAME, token);
   }
 }
 
@@ -43,17 +43,17 @@ export function setToken(token) {
  * 清除 token
  */
 export function removeToken() {
-  if (storage) {
-    if ("localStorage" === storage) {
-      return localStorage.removeItem(tokenName);
-    } else if ("sessionStorage" === storage) {
+  if (STORAGE) {
+    if ("localStorage" === STORAGE) {
+      return localStorage.removeItem(TOKEN_NAME);
+    } else if ("sessionStorage" === STORAGE) {
       return sessionStorage.clear();
-    } else if ("cookie" === storage) {
-      return cookie.remove(tokenName);
+    } else if ("cookie" === STORAGE) {
+      return cookie.remove(TOKEN_NAME);
     } else {
-      return localStorage.removeItem(tokenName);
+      return localStorage.removeItem(TOKEN_NAME);
     }
   } else {
-    return localStorage.removeItem(tokenName);
+    return localStorage.removeItem(TOKEN_NAME);
   }
 }

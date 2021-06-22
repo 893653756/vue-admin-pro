@@ -12,17 +12,10 @@ module.exports = {
   devPort: 3000,
   /**** net ****/
   baseUrl: process.env.NODE_ENV === "development" ? "/dev-api" : "/dev-api",
-  requestTimeout: 10000,
-  tokenName: "token",
-  /**** settings ****/
-  // 路由模式，可选值为 history 或 hash
-  routerMode: "hash",
-  // 路由白名单
-  routesWhiteList: ["/login"],
-  // token存储位置localStorage sessionStorage cookie
-  storage: "localStorage",
+  /**** 可更改 settings ****/
   // token失效回退到登录页时是否记录本次的路由（是否记录当前tab页）
   recordRoute: true,
+  // 是否打开第一个菜单
   openFirstMenu: true,
   // 布局
   layout: "comprehensive",
